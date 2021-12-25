@@ -9,14 +9,16 @@ function RecommendCarPage(): JSX.Element {
   const [cars, setCars] = useState<ICar[]>([]);
   const [hidden, setHidden] = useState(false);
 
-  const filterData = (query: ICar) => {
+  const filterData = async (query: any) => {
     const sdkCars = new CarsModel();
-    const result = sdkCars.filter(query) as ICar[];
+    const result = await sdkCars.recommend(query) as ICar[];
 
+    console.log(query, result);
+    
     setCars(result);
   };
 
-  const onSearch = async (query: ICar) => {
+  const onSearch = async (query: any) => {
     await filterData(query);
   };
 

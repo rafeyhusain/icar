@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Cars, ICar } from '../../sdk/CarsModel';
+import { Cars } from '../../sdk/CarsModel';
 import classes from './Search.module.css';
 
-type OnSearch = (query: ICar) => void;
+type OnSearch = (query: any) => void;
 
 type SearchProps = {
   onSearch: OnSearch;
@@ -10,7 +10,7 @@ type SearchProps = {
 };
 
 function Search({ onSearch, recommend }: SearchProps): JSX.Element {
-  const [car, setCar] = useState(Cars.default());
+  const [car, setCar] = useState(Cars.query());
 
   const handleChangeYear = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
@@ -24,19 +24,19 @@ function Search({ onSearch, recommend }: SearchProps): JSX.Element {
     setSearch({ ...car, make: value })
   };
 
-  const handleChangeFuel = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChangeFuelPrice = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
 
-    setSearch({ ...car, fuel: +value })
+    setSearch({ ...car, fuelPrice: +value })
   };
 
-  const handleChangeMaintenance = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChangeDistance = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
 
-    setSearch({ ...car, maintenance: +value })
+    setSearch({ ...car, distance: +value })
   };
 
-  const setSearch = (query: ICar) => {
+  const setSearch = (query: any) => {
     setCar(query);
   };
 
@@ -66,10 +66,10 @@ function Search({ onSearch, recommend }: SearchProps): JSX.Element {
   const recommended =
     <>
       <span className='pl-5'>
-        <input value={car.fuel === 0 ? '' : car.year} onChange={handleChangeFuel} onKeyPress={handleKeyPress} placeholder=" Enter price of fuel (€/L)" />
+        <input value={car.fuelPricePrice === 0 ? '' : car.fuelPricePrice} onChange={handleChangeFuelPrice} onKeyPress={handleKeyPress} placeholder=" Enter price of fuelPrice (€/L)" />
       </span>
       <span className='pl-5'>
-        <input value={car.maintenance === 0 ? '' : car.maintenance} onChange={handleChangeMaintenance} onKeyPress={handleKeyPress} placeholder=" Enter travel/month (km/month)" />
+        <input value={car.distance === 0 ? '' : car.distance} onChange={handleChangeDistance} onKeyPress={handleKeyPress} placeholder=" Enter travel/month (km/month)" />
       </span>
       <span className='pl-5'>
         <button className="bg-blue-500 hover:bg-blue-700 text-white py-1 px-4 rounded font-normal" onClick={handleGo}>Go</button>

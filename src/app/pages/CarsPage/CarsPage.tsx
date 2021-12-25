@@ -9,9 +9,9 @@ function CarsPage(): JSX.Element {
   const [cars, setCars] = useState<ICar[]>([]);
   const [hidden, setHidden] = useState(false);
 
-  const filterData = (query: ICar) => {
+  const filterData = async (query: ICar) => {
     const sdkCars = new CarsModel();
-    const result = sdkCars.filter(query) as ICar[];
+    const result = await sdkCars.filter(query) as ICar[];
 
     setCars(result);
   };

@@ -13,6 +13,12 @@ return <>
             {item.year ? item.year : '-'}
           </div>
           <div className="flex-initial">
+            {item.fuel ? item.fuel + ' km/l' : '-'}
+          </div>
+          <div className="flex-initial">
+            {item.maintenance ? item.maintenance + ' €/year' : '-'}
+          </div>
+          <div className="flex-initial">
             {item.make ? item.make : '-'}
           </div>
         </div>
