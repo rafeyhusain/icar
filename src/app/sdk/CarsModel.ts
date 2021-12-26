@@ -9,14 +9,18 @@ export interface ICar {
 
 export class Cars {
   async filter(query: any): Promise<ICar[]> {
-    return this.fetch(`${Env.API_URL}/cars/filter`, query);
+    return this.post(`${Env.API_URL}/cars/filter`, query);
   }  
   
   async recommend(query: any): Promise<ICar[]> {
-    return this.fetch(`${Env.API_URL}/cars/recommend`, query);
+    return this.post(`${Env.API_URL}/cars/recommend`, query);
   }
 
-  async fetch(url: any, query: any): Promise<ICar[]> {
+  async save(car: ICar): Promise<ICar[]> {
+    return this.post(`${Env.API_URL}/cars/create`, car);
+  }
+
+  async post(url: any, query: any): Promise<ICar[]> {
     try {
       const response = await fetch(url, {
         method: 'POST',

@@ -66,7 +66,7 @@ function Search({ onSearch, recommend }: SearchProps): JSX.Element {
   const recommended =
     <>
       <span className='pl-5'>
-        <input value={car.fuelPricePrice === 0 ? '' : car.fuelPricePrice} onChange={handleChangeFuelPrice} onKeyPress={handleKeyPress} placeholder=" Enter price of fuelPrice (€/L)" />
+        <input value={car.fuelPrice === 0 ? '' : car.fuelPrice} onChange={handleChangeFuelPrice} onKeyPress={handleKeyPress} placeholder=" Enter fuel price (€/L)" />
       </span>
       <span className='pl-5'>
         <input value={car.distance === 0 ? '' : car.distance} onChange={handleChangeDistance} onKeyPress={handleKeyPress} placeholder=" Enter travel/month (km/month)" />

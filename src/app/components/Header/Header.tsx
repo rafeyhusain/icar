@@ -19,8 +19,13 @@ function Header() {
             Recommend Car
           </Link>
         </li>
+        <li>
+          <Link className='mr-6 text-black-500 hover:text-blue-800 font-bold' to={"./edit-car"}>
+            Add Car
+          </Link>
+        </li>
       </ul>
-      </>
+    </>
   );
 }
 
