@@ -1,29 +1,37 @@
 # Introduction
 
+This is a React clinet for car dealer app.
 ## Tech Stack
 
 React, Jest, Vite, Tailwind CSS, StoryBook
 
-## Getting Started
+## Setup
 
-To list all currencies:
+To install
 
-```html
-http://localhost:3001/
+```sh
+npm i
 ```
 
-To list a single currency:
+To start website
+
+```sh
+npm run client:dev
+```
+
+To list all car:
 
 ```html
-http://localhost:3001/usd
+http://localhost:3000/
 ```
+
 
 ## Installing / Developing
 
 Install using:
 
 ```shell
-npm install
+npm i
 ```
 
 This will install the dependencies required to run the app.
