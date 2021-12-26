@@ -46,8 +46,7 @@ function EditCarPage(item: ICar): JSX.Element {
           <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-year">
             Year
           </label>
-          <input value={car.year === 0 ? '' : car.year} onChange={handleChangeYear} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-year" type="text" placeholder="Year" />
-          <p className="hidden text-red-500 text-xs italic">Please enter year.</p>
+          <input value={car.year === 0 ? '' : car.year} onChange={handleChangeYear} className="appearance-none block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-year" type="text" placeholder="Year" />
         </div>
         <div className="w-full md:w-1/2 px-3">
           <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-make">
